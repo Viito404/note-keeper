@@ -1,0 +1,4 @@
+.rolagem-tabela {
+  max-height: 50px; /* Ajuste a altura máxima conforme necessário */
+  overflow-y: auto;
+}

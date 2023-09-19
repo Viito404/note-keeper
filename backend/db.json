@@ -1,0 +1,78 @@
+{
+  "categorias": [
+    {
+      "titulo": "Lazer",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "titulo": "Mercado"
+    },
+    {
+      "id": 3,
+      "titulo": "Trabalho"
+    },
+    {
+      "titulo": "Testes HTTP na Aula",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "titulo": "aaaaaaaaaaaaaa"
+    },
+    {
+      "id": 6,
+      "titulo": "sdsdsdsdsd"
+    },
+    {
+      "id": 7,
+      "titulo": "frfrfr"
+    },
+    {
+      "id": 8,
+      "titulo": "wdwdwdwd"
+    },
+    {
+      "id": 9,
+      "titulo": "wadwadwadwadwad"
+    },
+    {
+      "id": 10,
+      "titulo": "wwwwwwwwwwwwwwwwwwe"
+    },
+    {
+      "id": 11,
+      "titulo": ""
+    }
+  ],
+  "notas": [
+    {
+      "id": 1,
+      "titulo": "Lavar o cachorro 🦮",
+      "conteudo": "Pegar o shampoo > pegar a toalha",
+      "tema": "warning",
+      "categoriaId": 1
+    },
+    {
+      "id": 2,
+      "titulo": "Planejar as Aulas de Angular",
+      "conteudo": "Pesquisar material",
+      "tema": "info",
+      "categoriaId": 3
+    },
+    {
+      "id": 3,
+      "titulo": "Atualizar Aplicações Angular",
+      "conteudo": "Preparar projetos para as aulas",
+      "tema": "danger",
+      "categoriaId": 3
+    },
+    {
+      "titulo": "Teste Insomnia",
+      "conteudo": "Teste realizado pelo client do Insomnia",
+      "tema": "danger",
+      "categoriaId": 3,
+      "id": 4
+    }
+  ]
+}

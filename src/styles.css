@@ -1,0 +1,9 @@
+@import url("bootstrap-icons/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
+.h1Font{
+  font-family: 'Tilt Warp', cursive;
+}
+/* *{
+  outline: 1px solid red;
+} */
