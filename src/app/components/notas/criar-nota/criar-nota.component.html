@@ -37,7 +37,7 @@
           Categoria
         </label>
 
-        <div ngbDropdown>
+        <!-- <div ngbDropdown>
           <button
             type="button"
             class="btn btn-outline-dark w-100"
@@ -51,7 +51,15 @@
              <button ngbDropdownItem (click)="atribuirCategoria(categoria)" type="button">{{categoria.titulo}}</button>
             </div>
           </div>
-         </div>
+         </div> -->
+
+         <select
+         [(ngModel)]="nota.categoriaId"
+         class="form-select w-50"
+         name="categoriaId"
+         id="">
+         <option *ngFor="let categoria of categorias" [ngValue]="categoria.id">{{categoria.titulo}}</option>
+        </select>
       </div>
 
       <label for="tema" class="form-label fs-5 fw-semibold">Tema</label>

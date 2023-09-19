@@ -5,22 +5,21 @@
       <i class="bi bi-bookmarks-fill"></i>
       NoteKeeper
     </a>
-    <a class="nav-link px-2">
-      <div class="justify-content-center d-flex gap-2 d-inline">
+    <div class="justify-content-center d-flex gap-2 d-inline">
+      <a routerLink="/categorias/listar">
         <button
-          routerLink="/categorias/listar"
-          class="btn btn-sm bi-bookmark  fw-semibold bg-primary btn-outline-light mb-2 rounded-1"
+          class="btn btn-sm bi-bookmark fw-semibold bg-primary btn-outline-light mb-2 rounded-1"
         >
           Categorias
         </button>
+      </a>
+      <a routerLink="/notas/listar">
         <button
-        routerLink="/notas/listar"
-        class="btn btn-sm bi-journal-text fw-semibold bg-primary btn-outline-light mb-2 rounded-1"
-      >
-        Notas
-      </button>
-      </div></a
-    >
-
+          class="btn btn-sm bi-journal-text fw-semibold bg-primary btn-outline-light mb-2 rounded-1"
+        >
+          Notas
+        </button>
+      </a>
+    </div>
   </div>
 </nav>

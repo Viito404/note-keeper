@@ -14,7 +14,6 @@ import { CategoriaService } from '../../services/categoria.service';
 export class CriarNotaComponent implements OnInit{
   nota: Nota;
   categorias: Categoria[] = [];
-  categoria: Categoria;
 
   constructor(private notaService: NotaService, private categoriaService: CategoriaService, private router: Router, private toastService: ToastrService) {
     this.nota = new Nota(
@@ -25,11 +24,6 @@ export class CriarNotaComponent implements OnInit{
       '',
       0
     );
-
-    this.categoria = new Categoria(
-      'Categorias',
-      0
-    )
     
   }
   ngOnInit(): void {
@@ -39,16 +33,11 @@ export class CriarNotaComponent implements OnInit{
   }
 
   criarNota() {
-
-    
     this.notaService.criar(this.nota).subscribe(nota=> {
 
       this.toastService.success('Nota criada com sucesso!','SUCESSO');
       this.router.navigate(['/notas', 'listar']);
     });
   }
-
-  atribuirCategoria(categoria:any){
-this.categoria = categoria;
   }
-}
+

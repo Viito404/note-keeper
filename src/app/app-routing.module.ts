@@ -6,11 +6,13 @@ import { EditarNotaComponent } from './components/notas/editar-nota/editar-nota.
 import { ExcluirNotaComponent } from './components/notas/excluir-nota/excluir-nota.component';
 import { ListarCategoriasComponent } from './components/categorias/listar-categorias/listar-categorias.component';
 import { CriarCategoriaComponent } from './components/categorias/criar-categoria/criar-categoria.component';
+import { EditarCategoriaComponent } from './components/categorias/editar-categoria/editar-categoria.component';
+import { ExcluirCategoriaComponent } from './components/categorias/excluir-categoria/excluir-categoria.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'notas/listar',
+    redirectTo: 'categorias/listar',
     pathMatch: 'full',
   },
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path: 'categoria/criar',
     component: CriarCategoriaComponent,
+  },
+  {
+    path: 'categorias/editar/:id',
+    component: EditarCategoriaComponent,
+  },
+  {
+    path: 'categorias/excluir/:id',
+    component: ExcluirCategoriaComponent
   }
 ];
 

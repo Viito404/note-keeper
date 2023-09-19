@@ -15,34 +15,6 @@
     {
       "titulo": "Testes HTTP na Aula",
       "id": 4
-    },
-    {
-      "id": 5,
-      "titulo": "aaaaaaaaaaaaaa"
-    },
-    {
-      "id": 6,
-      "titulo": "sdsdsdsdsd"
-    },
-    {
-      "id": 7,
-      "titulo": "frfrfr"
-    },
-    {
-      "id": 8,
-      "titulo": "wdwdwdwd"
-    },
-    {
-      "id": 9,
-      "titulo": "wadwadwadwadwad"
-    },
-    {
-      "id": 10,
-      "titulo": "wwwwwwwwwwwwwwwwwwe"
-    },
-    {
-      "id": 11,
-      "titulo": ""
     }
   ],
   "notas": [
@@ -73,6 +45,22 @@
       "tema": "danger",
       "categoriaId": 3,
       "id": 4
+    },
+    {
+      "id": 5,
+      "titulo": "uuuuuuuuuu",
+      "conteudo": "uuuuuuuuuuuu",
+      "tema": "warning",
+      "categoriaTitulo": "",
+      "categoriaId": 3
+    },
+    {
+      "id": 6,
+      "titulo": "wwwdw",
+      "conteudo": "wdwdwd",
+      "tema": "info",
+      "categoriaTitulo": "",
+      "categoriaId": 3
     }
   ]
 }

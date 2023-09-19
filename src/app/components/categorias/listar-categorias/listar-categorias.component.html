@@ -3,51 +3,50 @@
     <h1 class="h1Font">Minhas Categorias</h1>
 
     <div class="h1Font">
-      <button
-        routerLink="/categoria/criar"
-        class="btn btn-lg btn-outline-primary mb-4 rounded-4"
-      >
-        <i class="bi bi-plus-circle"></i>
-        Criar Categoria
-      </button>
+      <a routerLink="/categoria/criar">
+        <button class="btn btn-lg btn-outline-primary mb-4 rounded-4">
+          <i class="bi bi-plus-circle"></i>
+          Criar Categoria
+        </button>
+      </a>
     </div>
-    <div style="max-height: 300px; overflow-y: scroll;">
+    <div style="max-height: 300px; overflow-y: scroll">
       <table class="table table-striped rolagem-tabela table-bordered">
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Título</th>
-            <th scope="col">Ações</th>
           </tr>
         </thead>
         <tbody class="justify-content-center">
           <tr *ngFor="let categoria of categorias">
-            <th scope="row">{{categoria.id}}</th>
+            <th scope="row ">{{ categoria.id }}</th>
             <td>
-              {{categoria.titulo}}
+              {{ categoria.titulo }}
             </td>
-            <td><div class=" d-flex gap-3 justify-content-center">
-              <button
-              class="btn btn-outline-primary rounded-4 btn-sm"
-              routerLink="/categorias/editar/{{categoria.id}}"
-              aria-label="Editar"
-              placement="bottom"
-            >
-              <i class="bi bi-pen"></i>
-            </button>
-            <button
-              class="btn btn-outline-primary rounded-4 btn-sm"
-              routerLink="/categorias/excluir/{{categoria.id}}"
-              aria-label="Excluir"
-              placement="bottom"
-            >
-              <i class="bi bi-trash"></i>
-            </button>
-            </div></td>
+            <td>
+              <div class="d-flex gap-3 justify-content-center">
+                <button
+                  class="btn bg-primary text-light rounded-4 btn-sm"
+                  routerLink="/categorias/editar/{{ categoria.id }}"
+                  aria-label="Editar"
+                  placement="bottom"
+                >
+                  <i class="bi bi-pen"></i>
+                </button>
+                <button
+                  class="btn bg-danger text-light rounded-4 btn-sm"
+                  routerLink="/categorias/excluir/{{ categoria.id }}"
+                  aria-label="Excluir"
+                  placement="bottom"
+                >
+                  <i class="bi bi-trash"></i>
+                </button>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
-
   </div>
 </section>

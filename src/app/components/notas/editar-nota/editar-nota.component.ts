@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NotaService } from '../../services/nota.service';
 import { ToastrService } from 'ngx-toastr';
 import { Categoria } from '../../models/categoria';
+import { CategoriaService } from '../../services/categoria.service';
 
 @Component({
   selector: 'app-editar-nota',
@@ -12,16 +13,15 @@ import { Categoria } from '../../models/categoria';
 })
 export class EditarNotaComponent implements OnInit {
   nota: Nota;
-
-  constructor(private notaService: NotaService, private route:ActivatedRoute,private router: Router, private toastService: ToastrService) {       this.nota = new Nota(
-    '',
-    '',
-    'dark',
-    0,
-    '',
-    0
-  );
-
+  categorias: Categoria[] = [];
+  constructor(
+    private notaService: NotaService,
+    private categoriaService: CategoriaService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private toastService: ToastrService
+  ) {
+    this.nota = new Nota('', '', 'dark', 0, '', 0);
   }
 
   ngOnInit(): void {
@@ -29,13 +29,18 @@ export class EditarNotaComponent implements OnInit {
     this.notaService.selecionarPorId(id).subscribe((nota: Nota) => {
       this.nota = nota;
     });
+    this.categoriaService
+      .selecionarTodos()
+      .subscribe((categorias: Categoria[]) => {
+        this.categorias = categorias;
+      });
   }
 
   editarNota() {
-    this.notaService.editar(this.nota).subscribe((nota:Nota) => {
-      this.toastService.success('Nota editada com sucesso!','SUCESSO');
+    this.notaService.editar(this.nota).subscribe((nota: Nota) => {
+      this.toastService.success('Nota editada com sucesso!', 'SUCESSO');
 
-      this.router.navigate(['/notas','listar']);
+      this.router.navigate(['/notas', 'listar']);
     });
   }
 }

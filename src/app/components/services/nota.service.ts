@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Nota } from '../models/nota';
+import { Categoria } from '../models/categoria';
 
 @Injectable({
   providedIn: 'root', // App module
 })
 export class NotaService {
   private API_URL = 'http://localhost:3000/notas';
+  private CATEGORIAS_API_URL = 'http://localhost:3000/categorias';
   constructor(private http: HttpClient) {}
 
   criar(nota: Nota): Observable<Nota> {
@@ -30,5 +32,9 @@ export class NotaService {
   }
   selecionarTodos(): Observable<Nota[]> {
     return this.http.get<Nota[]>(this.API_URL);
+  }
+  selecionarNotasCategoria(categoria:Categoria):Observable<Nota[]>{
+    const url = `${this.API_URL}?_expand=${categoria}`
+    return this.http.get<Nota[]>(url);
   }
 }
