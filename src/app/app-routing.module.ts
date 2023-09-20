@@ -8,6 +8,7 @@ import { ListarCategoriasComponent } from './components/categorias/listar-catego
 import { CriarCategoriaComponent } from './components/categorias/criar-categoria/criar-categoria.component';
 import { EditarCategoriaComponent } from './components/categorias/editar-categoria/editar-categoria.component';
 import { ExcluirCategoriaComponent } from './components/categorias/excluir-categoria/excluir-categoria.component';
+import { ListarNotasArquivadasComponent } from './components/notas/listar-notas-arquivadas/listar-notas-arquivadas.component';
 
 const routes: Routes = [
   {
@@ -46,7 +47,12 @@ const routes: Routes = [
   {
     path: 'categorias/excluir/:id',
     component: ExcluirCategoriaComponent
+  },
+  {
+    path: 'notas/listar/arquivadas',
+    component: ListarNotasArquivadasComponent
   }
+
 ];
 
 @NgModule({

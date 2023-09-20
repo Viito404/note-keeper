@@ -1,37 +1,27 @@
-<section class="row gap-3">
+<section class="row">
   <div class="col col-lg-10 d-grid gap-3">
     <h1 class="h1Font">Minhas Notas</h1>
-    <div class="h1Font">
+    <div class="h1Font d-flex gap-2">
       <a routerLink="/notas/criar">
         <button class="btn btn-lg btn-outline-primary mb-4 rounded-4">
           <i class="bi bi-plus-circle"></i>
           Criar Nota
         </button></a
       >
-    </div>
-  <div class="row g-2">
-    <div class="col-6 col-lg-1">
-      <span
-      (click)="selecionarTodas()"
-      ngbTooltip="Todas as Notas"
-      placement="left"
-      class="app-badge-filtro badge rounded-pill bg-primary w-100 p-2 fs-6 fw-semibold">Todas</span>
+      <a routerLink="/notas/listar/arquivadas">
+        <button class="btn btn-lg btn-outline-secondary mb-4 rounded-4">
+          <i class="bi bi-archive-fill"></i>
+          Ver Notas Arquivadas
+        </button></a
+      >
     </div>
 
-  <div class="col-6 col-lg-1" *ngFor="let categoria of categorias">
-    <span
-      (click)="selecionarNotasPorCategoria(categoria)"
-      ngbTooltip="Categoria: {{ categoria.titulo }}"
-      placement="bottom"
-      class="app-badge-filtro badge rounded-pill bg-primary w-100 p-2 fs-6 fw-semibold"
-      >{{categoria.titulo.split(" ")[0]}}</span
-    >
-  </div>
-</div>
+  <app-filtro-categoria [categorias]="categorias"
+  (onFiltroSelecionado)="filtrarNotasCategoria($event)"></app-filtro-categoria>
 
     <div class="row g-3">
       <div *ngFor="let nota of notas" class="col-sm col-md-6 col-lg-3">
-        <app-nota [nota]="nota"></app-nota>
+        <app-nota [nota]="nota" (onArquivarClicado)="arquivarNota($event)"></app-nota>
       </div>
     </div>
   </div>

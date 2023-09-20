@@ -7,6 +7,7 @@ export class Nota {
   tema: Tema;
   categoriaTitulo?: string;
   categoriaId: number;
+  arquivada: boolean;
 
   constructor(titulo: string, conteudo: string, tema: Tema, categoriaId: number, categoriaTitulo?: string, id?: number) {
     this.id = id;
@@ -15,6 +16,7 @@ export class Nota {
     this.tema = tema;
     this.categoriaTitulo = categoriaTitulo;
     this.categoriaId = categoriaId;
+    this.arquivada = false;
   }
 }
 

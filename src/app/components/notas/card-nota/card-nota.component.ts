@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Nota } from '../../models/nota';
 
 // One-way Data Binding
@@ -9,12 +9,15 @@ import { Nota } from '../../models/nota';
   styleUrls: ['./card-nota.component.css'],
 })
 export class CardNotaComponent {
-  @Input() nota: Nota = {
-    id: 0,
-    titulo: 'Lavar o cachorro 🦮',
-    conteudo: 'Pegar a toalha > Pegar o Shampoo',
-    tema: 'dark',
-    categoriaId: 0,
-    categoriaTitulo: 'Trabalhos'
-  };
+  @Input() nota: Nota;
+
+  @Output() onArquivarClicado: EventEmitter<Nota>;
+  constructor() {
+    this.nota = new Nota('', '', 'dark', 0, '', 0);
+    this.onArquivarClicado = new EventEmitter();
+  }
+
+  arquivarNota(nota: Nota): void {
+    this.onArquivarClicado.emit(nota);
+  }
 }

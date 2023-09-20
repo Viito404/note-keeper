@@ -23,28 +23,32 @@
       "titulo": "Lavar o cachorro 🦮",
       "conteudo": "Pegar o shampoo > pegar a toalha",
       "tema": "warning",
-      "categoriaId": 1
+      "categoriaId": 1,
+      "arquivada": false
     },
     {
       "id": 2,
       "titulo": "Planejar as Aulas de Angular",
       "conteudo": "Pesquisar material",
       "tema": "info",
-      "categoriaId": 3
+      "categoriaId": 3,
+      "arquivada": false
     },
     {
       "id": 3,
       "titulo": "Atualizar Aplicações Angular",
       "conteudo": "Preparar projetos para as aulas",
       "tema": "danger",
-      "categoriaId": 3
+      "categoriaId": 3,
+      "arquivada": false
     },
     {
       "titulo": "Teste Insomnia",
       "conteudo": "Teste realizado pelo client do Insomnia",
       "tema": "danger",
       "categoriaId": 3,
-      "id": 4
+      "id": 4,
+      "arquivada": false
     },
     {
       "id": 5,
@@ -52,7 +56,8 @@
       "conteudo": "uuuuuuuuuuuu",
       "tema": "warning",
       "categoriaTitulo": "",
-      "categoriaId": 3
+      "categoriaId": 3,
+      "arquivada": false
     },
     {
       "id": 6,
@@ -60,7 +65,17 @@
       "conteudo": "wdwdwd",
       "tema": "info",
       "categoriaTitulo": "",
-      "categoriaId": 3
+      "categoriaId": 3,
+      "arquivada": false
+    },
+    {
+      "id": 7,
+      "titulo": "fwdsdsd",
+      "conteudo": "ssdsdssd",
+      "tema": "danger",
+      "categoriaTitulo": "",
+      "categoriaId": 3,
+      "arquivada": false
     }
   ]
 }

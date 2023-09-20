@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Nota } from '../../models/nota';
+import { Component } from '@angular/core';
 import { NotaService } from '../../services/nota.service';
-import { CategoriaService } from '../../services/categoria.service';
+import { Nota } from '../../models/nota';
 import { Categoria } from '../../models/categoria';
+import { CategoriaService } from '../../services/categoria.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-listar-notas',
-  templateUrl: './listar-notas.component.html',
-  styleUrls: ['./listar-notas.component.css'],
+  selector: 'app-listar-notas-arquivadas',
+  templateUrl: './listar-notas-arquivadas.component.html',
+  styleUrls: ['./listar-notas-arquivadas.component.css']
 })
-export class ListarNotasComponent implements OnInit {
+export class ListarNotasArquivadasComponent {
   notas: Nota[] = [];
   categorias: Categoria[] = [];
 
@@ -25,23 +25,24 @@ export class ListarNotasComponent implements OnInit {
   }
  
   selecionarTodas(){
-    this.notaService.selecionarTodos().subscribe((notas:Nota[])=> {
+    this.notaService.selecionarNotasArquivadas().subscribe((notas:Nota[])=> {
       this.notas = notas;
      });
   }
 
   selecionarNotasPorCategoria(categoria: Categoria): void{
-    this.notaService.selecionarNotasCategoria(categoria).subscribe((notas:Nota[])=> {
+    this.notaService.selecionarNotasArquivadasCategoria(categoria).subscribe((notas:Nota[])=> {
       this.notas = notas;
      });
   }
-  arquivarNota(nota:Nota):void{
-    nota.arquivada = true;
+
+  reativarNota(nota:Nota):void{
+    nota.arquivada = false;
 
     this.notaService.editar(nota).subscribe((nota:Nota) =>{
-      this.toastService.success('Nota arquivada com sucesso', 'Sucesso');
+      this.toastService.success('Nota reativada com sucesso', 'Sucesso');
 
-    this.notaService.selecionarTodos().subscribe((notas:Nota[]) => (this.notas = notas));
+    this.notaService.selecionarNotasArquivadas().subscribe((notas:Nota[]) => (this.notas = notas));
     });
   }
   filtrarNotasCategoria(categoria: Categoria | null): void{

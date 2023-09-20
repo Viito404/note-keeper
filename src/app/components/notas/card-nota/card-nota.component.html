@@ -3,8 +3,7 @@
     <div class="d-flex align-items-start gap-3">  
       <div class="row">
         <h5 class="card-title ">{{ nota.titulo }}</h5>
-        <span class=" fw-semibold text-muted">Id: {{ nota.id }}</span>
-        <span class=" fw-semibold text-muted text-{{nota.tema}}">{{ nota.categoriaTitulo }}</span>
+        <span class=" fw-semibold text-muted">#{{ nota.id }}</span>
       </div>
       
     </div>
@@ -13,7 +12,7 @@
   <div class="d-flex gap-1 justify-content-end card-footer bg-{{nota.tema}} bg-opacity-50 }">
     
     <button
-      class="btn btn-outline-{{ nota.tema }}"
+      class="btn btn-outline-{{ nota.tema }} rounded-5 py-2"
       routerLink="/notas/editar/{{nota.id}}"
       aria-label="Editar"
       ngbTooltip="Editar"
@@ -22,13 +21,20 @@
       <i class="bi bi-pen"></i>
     </button>
     <button
-      class="btn btn-outline-{{ nota.tema }} "
+      class="btn btn-outline-{{ nota.tema }} rounded-5 py-2 "
       routerLink="/notas/excluir/{{nota.id}}"
       aria-label="Excluir"
       ngbTooltip="Excluir"
       placement="bottom"
     >
       <i class="bi bi-trash"></i>
+    </button>
+
+    <button class="btn btn-outline-{{nota.tema}} rounded-5 py-2" 
+    [ngbTooltip]="nota.arquivada ? 'Reativar' : 'Arquivar'"
+    placement="bottom"
+    (click)="arquivarNota(nota)">
+      <i class="bi" [ngClass]="nota.arquivada ? 'bi-arrow-left-circle-fill' : 'bi-archive-fill'"></i>
     </button>
   </div>
 </div>
